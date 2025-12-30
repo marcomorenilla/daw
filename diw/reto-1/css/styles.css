@@ -26,11 +26,11 @@ body {
     background-size: cover;
 }
 
-ul{
+.nav-list{
     display: none;
 }
 
-input:checked ~ ul{
+input:checked ~ .nav-list{
     display: flex;
     flex-direction: column;
 }
@@ -72,7 +72,7 @@ a{
     color: var(--main-color);
 }
 
-main {
+.index-main {
     flex: 1;
     color: var(--main-color);
     margin: 150px 0;

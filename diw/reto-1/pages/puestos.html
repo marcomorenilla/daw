@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercado La Alhóndiga</title>
+    <title>Puestos La Alhóndiga</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
-    <h1>Puestos</h1>
+    <header>
+        <nav class="navigation">
+            <label for="menu"><img class="burger" src="../assets/hamburguesa.svg" alt="icono hamburguesa"
+                    width="50px"></label>
+            <input id="menu" type="checkbox">
+            <div class="logo">
+                <img src="../assets/mercado-logo.svg" alt="logo mercado" width="50px">
+            </div>
+            <ul class="nav-list">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./puestos.html">Puestos</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Puestos</h1>
+        <section id="filter-select">
+            <p>Ordenar por:</p>
+            <select name="categories" id="categories">
+                <option value="categories" disabled>Categoría...</option>
+                <option value="cheap">De más barato a más caro</option>
+                <option value="expensive">De más caro a más barato </option>
+                <option value="alphabetic">Por orden alfabético</option>
+            </select>
+        </section>
+        <section>
+            <article>
+                <h2>CarneS</h2>
+                <img src="../assets/fondo-web.webp" alt="Puesto mercado" width="200px">
+                <p>Horario:</p>
+                <ul>
+                    <li><span>L-V:</span> 09:00h - 14:00h <br>17:00h-20:00h</li>
+                    <li><span>S:</span>09:00h - 14:00h</li>
+                    <li><span>D:</span>Cerrado</li>
+                </ul>
+                <div>
+                    <button>Ir</button>
+                    <span>carne</span>
+                </div>
+            </article>
+        </section>
+    </main>
+
 </body>
+
 </html>
