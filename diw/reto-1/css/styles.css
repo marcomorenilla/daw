@@ -3,6 +3,7 @@
 :root {
     --main-color: #efebe5;
     --black-color: #000;
+    --border-radius: 10px;
 }
 
 * {
@@ -12,8 +13,11 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: var(--main-color);
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
 }
 
 .index-body {
@@ -22,30 +26,135 @@ body {
     background-size: cover;
 }
 
+ul{
+    display: none;
+}
+
+input:checked ~ ul{
+    display: flex;
+    flex-direction: column;
+}
+
 #menu {
     display: none;
 }
 
-.navigation li {
-    list-style: none;
+.logo{
+    display: none;
 }
 
-.navigation a{
+.navigation {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    background-color: var(--main-color);
+    padding: 10px;
+}
+
+.navigation li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+a{
     text-decoration: none;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.navigation a {
+    border: 2px solid var(--black-color);
+    color: var(--black-color);
+    padding: 3px 20px 3px 20px;
+    font-size: 20px;
+}
+
+.navigation a:hover {
+    background-color: var(--black-color);
+    color: var(--main-color);
+}
+
+main {
+    flex: 1;
+    color: var(--main-color);
+    margin: 150px 0;
+}
+
+.index-flex-cards{
+    display: flex;
+    justify-content: center;
+    gap:30px;
+    font-size: 3dvh;
+    margin-top: 50px;
+}
+
+.index-flex-cards article{
+    display: flex;
+    border: 1px solid var(--main-color);
+    padding: 10px 50px;
+    flex-direction: column;
+}
+
+.index-flex-cards article:hover, article:hover a{
+    background-color: var(--main-color);
     color: var(--black-color);
 }
 
-@media (min-width: 600px) {
+
+footer {
+    background-color: var(--main-color);
+    text-align: center;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: 400;
+}
+
+h2 {
+    letter-spacing: 4px;
+    word-spacing: 10px;
+    font-weight: 500;
+}
+
+
+@media (min-width: 768px) {
     label {
         display: none;
     }
 
+    .logo {
+        display: block;
+        margin: 2px 50px 2px 0px;
+    }
+
     .navigation {
         display: flex;
+        flex-direction: row;
+        width: 30%;
+        align-items: center;
+        border-radius: var(--border-radius);
+        margin: 10px auto 0 auto;
+        flex-wrap: wrap;
+        padding: 3px;
+    }
+
+    input:checked ~ ul{
+        flex-direction: row;
     }
 
     .navigation ul {
         display: flex;
-        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .navigation li {
+        margin: 5px;
     }
 }
