@@ -1,9 +1,15 @@
+/* Fuente google font */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Estilos generales */
 
 :root {
     --main-color: #efebe5;
+    --card-white: #f7f7f7;
     --black-color: #000;
     --border-radius: 10px;
+    --box-shadow: #e5c697
 }
 
 * {
@@ -20,27 +26,29 @@ body {
     min-height: 100vh;
 }
 
-.index-body {
-    background-image: url('../assets/fondo-web.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--main-color);
 }
 
-.nav-list{
+footer {
+    background-color: var(--main-color);
+    text-align: center;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* Estilos navbar hamburguesa */
+
+.nav-list, #menu, .logo{
     display: none;
 }
 
 input:checked ~ .nav-list{
     display: flex;
     flex-direction: column;
-}
-
-#menu {
-    display: none;
-}
-
-.logo{
-    display: none;
 }
 
 .navigation {
@@ -54,12 +62,6 @@ input:checked ~ .nav-list{
     margin-bottom: 10px;
 }
 
-a{
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--main-color);
-}
-
 .navigation a {
     border: 2px solid var(--black-color);
     color: var(--black-color);
@@ -70,6 +72,14 @@ a{
 .navigation a:hover {
     background-color: var(--black-color);
     color: var(--main-color);
+}
+
+/* Estilos index.html componentes específicos */
+
+.index-body {
+    background-image: url('../assets/fondo-web.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .index-main {
@@ -98,33 +108,45 @@ a{
     color: var(--black-color);
 }
 
-
-footer {
-    background-color: var(--main-color);
-    text-align: center;
-    padding: 20px;
-    font-weight: 500;
-    font-size: 20px;
-}
-
-h1,
-h2 {
+.index-title, .index-subtitle{
     text-align: center;
 }
 
-h1 {
+.index-title {
     font-size: 80px;
     font-weight: 400;
 }
 
-h2 {
+.index-subtitle {
     letter-spacing: 4px;
     word-spacing: 10px;
     font-weight: 500;
 }
 
+/* Estilos puestos.html */
+
+.puestos-grid-section{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 300px);
+    margin: 0 auto;
+    padding: 30px 0;
+    gap: 3rem;
+}
+
+.puestos-grid-section article{
+    padding: 30px;
+    background-color: var(--card-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 30px 5px var(--box-shadow);
+}
+
+/* Media query mobile first */
 
 @media (min-width: 768px) {
+
+    /* Menú navegación pantallas grandes*/
+
     label {
         display: none;
     }
