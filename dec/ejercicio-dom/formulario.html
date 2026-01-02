@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <main>
+        <h1>Contacto</h1>
+        <form id="contact" class="contact-form">
+            <section>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre">
+            </section>
+            <section>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Introduce tu email...">
+            </section>
+            <section>
+                <label for="mensaje">Mensaje:</label>
+                <textarea rows="5" name="mensaje" id="mensaje" placeholder="Introduce tu mensaje..."></textarea>
+            </section>
+            <button id="btn-enviar" type="submit">Enviar</button>
+        </form>
+    </main>
+    <script src="js/formulario.js"></script>
+</body>
+
+</html>
