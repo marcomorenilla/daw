@@ -10,7 +10,7 @@
     --black-color: #000;
     --border-radius: 10px;
     --box-shadow: #e5c697;
-    --carne-color: #6a5139;
+    --brown-color: #6a5139;
     --frutas-color: #00bf63;
     --varios-color: #38b6ff;
     --dulces-color: #ff751f;
@@ -34,6 +34,11 @@ a{
     text-decoration: none;
     font-weight: bold;
     color: var(--main-color);
+}
+
+h1{
+    font-size: 80px;
+    font-weight: 400;
 }
 
 footer {
@@ -107,18 +112,14 @@ input:checked ~ .nav-list{
     flex-direction: column;
 }
 
-.index-flex-cards article:hover, article:hover a{
-    background-color: var(--main-color);
-    color: var(--black-color);
+.index-flex-cards article:hover{
+    scale: 1.1;
+    box-shadow: 0 0 30px 5px var(--box-shadow);
+    transition: scale 0.3s ease;
 }
 
 .index-title, .index-subtitle{
     text-align: center;
-}
-
-h1{
-    font-size: 80px;
-    font-weight: 400;
 }
 
 .index-subtitle {
@@ -163,11 +164,12 @@ h1{
     padding: 30px;
     background-color: var(--card-white);
     border-radius: var(--border-radius);
-    box-shadow: 0 0 30px 5px var(--box-shadow);
+    border: 1px solid var(--box-shadow);
 }
 
 .puestos-grid-section article:hover{
     scale: 1.1;
+    box-shadow: 0 0 30px 2px var(--box-shadow);
     transition: scale 0.3s ease;
 }
 
@@ -209,12 +211,105 @@ h1{
 }
 
 .puestos-grid-section div span{
-    background-color: aqua;
+    color: var(--main-color);
     position: relative;
     left: 50px;
     border-radius: var(--border-radius);
     padding: 5px;
-    font-weight: 500;
+    font-weight: bold;
+}
+
+.carne{
+    background-color: var(--brown-color);
+}
+.fruta{
+    background-color: var(--frutas-color);
+}
+.varios{
+    background-color: var(--varios-color);
+}
+.dulces{
+    background-color: var(--dulces-color);
+}
+
+/*Estilos contacto*/
+.contacto-main h1{
+    text-align: center;
+    font-weight: bold;
+}
+
+.contact-form{
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+
+.contact-form section{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.contact-form label{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-form input, .contact-form textarea{
+    border-radius: var(--border-radius);
+    border: 0;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.contact-form textarea{
+    font-family: inherit;
+    resize: none;
+}
+
+.contact-form input:focus, .contact-form textarea:focus{
+    outline: none;
+    border:1px solid var(--brown-color);
+    box-shadow: 0 0 30px 2px var(--box-shadow);
+    transition: border 0.3s ease, box-shadow 0.5s ease;
+}
+
+.contact-form .acept-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form .acept-row .acept-label{
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+#acept{
+    accent-color: var(--box-shadow);
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.contact-form button{
+    font-size: 20px;
+    font-family: inherit;
+    padding: 10px;
+    font-weight: bold;
+    color: var(--main-color);
+    background-color: var(--brown-color);
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+.contact-form button:hover{
+    background-color: var(--black-color);
 }
 
 
@@ -225,7 +320,7 @@ h1{
 
     /* Menú navegación pantallas grandes*/
 
-    label {
+    .burger-menu {
         display: none;
     }
 

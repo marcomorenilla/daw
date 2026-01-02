@@ -11,8 +11,8 @@
 <body>
     <header>
         <nav class="navigation">
-            <label for="menu"><img class="burger" src="../assets/hamburguesa.svg" alt="icono hamburguesa"
-                    width="50px"></label>
+            <label class="burger-menu" for="menu"><img class="burger" src="../assets/hamburguesa.svg"
+                    alt="icono hamburguesa" width="50px"></label>
             <input id="menu" type="checkbox">
             <div class="logo">
                 <img src="../assets/mercado-logo.svg" alt="logo mercado" width="50px">
@@ -24,7 +24,29 @@
             </ul>
         </nav>
     </header>
-    <h1>Contacto</h1>
+    <main class="contacto-main">
+        <h1>Contacto</h1>
+        <form class="contact-form">
+            <section>
+                <label for="nombre">Nombre:</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Introduce tu nombre...">
+            </section>
+            <section>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Introduce tu email...">
+            </section>
+            <section>
+                <label for="mensaje">Mensaje:</label>
+                <textarea rows="5" name="mensaje" id="mensaje" placeholder="Introduce tu mensaje..."></textarea>
+            </section>
+            <section class="acept-row">
+                <input type="checkbox" id="acept">
+                <label for="acept" class="acept-label">Acepto la política de privacidad</label>
+            </section>
+            <button>Enviar</button>
+        </form>
+    </main>
+
 </body>
 
-</html>^
+</html>
