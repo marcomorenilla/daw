@@ -1,35 +1,36 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     background-color: #f7f7f7;
 }
 
-main{
+main {
     text-align: center;
     margin: 30px 25%;
     width: 50%;
 }
-h1{
+
+h1 {
     margin-bottom: 40px;
 }
 
-.contact-form section{
+.contact-form section {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-.contact-form label{
+.contact-form label {
     margin-bottom: 10px;
 }
 
-.contact-form input{
+.contact-form input {
     font-family: inherit;
     font-size: inherit;
     padding: 10px;
@@ -37,7 +38,7 @@ h1{
     border: none;
 }
 
-.contact-form textarea{
+.contact-form textarea {
     font-family: inherit;
     font-size: inherit;
     resize: none;
@@ -46,7 +47,7 @@ h1{
     border: none
 }
 
-.contact-form button{
+.contact-form button {
     font-size: inherit;
     padding: 10px;
     border-radius: 5px;
@@ -56,7 +57,51 @@ h1{
     font-weight: bold;
 }
 
-.contact-form button:hover{
+.contact-form button:hover {
     background-color: darkblue;
 }
 
+table{
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+td, th {
+  padding: 8px;
+}
+
+th{
+    background-color: white;
+}
+
+tr:nth-child(even){
+    background-color: white;
+}
+
+#warn{
+    background-color: lightgoldenrodyellow;
+    color: rgba(144, 103, 2, 0.959);
+    font-weight: bold;
+    border: solid 1px yellow;
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+#eliminar {
+    font-size: inherit;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(238, 0, 0);
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+#eliminar:hover{
+    background-color: darkred;
+}
