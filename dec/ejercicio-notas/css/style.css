@@ -14,22 +14,27 @@ main {
     flex-direction: column;
     justify-content: center;
     width: 50%;
-    margin: 2% auto;
+    margin: 1rem auto;
     text-align: center;
+}
+
+h1{
+    margin-bottom: 2rem;
 }
 
 label {
     font-weight: bold;
-    margin-top: 1%;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 input {
-    padding: 1%;
+    padding: 1rem;
     border-radius: 5px;
     font-family: inherit;
     font-size: inherit;
     border: none;
-    margin: 2% 3%;
+    margin: 20px 1rem;
 }
 
 #add-note {
@@ -40,7 +45,7 @@ input {
     font-size: inherit;
     border: none;
     border-radius: 5px;
-    margin: auto
+    margin: 1rem auto;
 }
 
 #add-note:hover {
@@ -48,7 +53,22 @@ input {
 }
 
 #list-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
     text-align: left;
+    border-radius: 5px;
+}
+
+ol{
+    width: max-content;
+    background-color: white;
+}
+
+li{
+    list-style: inside decimal;
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 #warn {
