@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Formulario de Contacto</title>
+</head>
+<body>
+    <main>
+        <form id="contact-form">
+            <fieldset>
+                <legend>Formulario de contacto</legend>
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" name="nombre" id="nombre"  placeholder="Escribe tu nombre...">
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" name="correo" id="correo"  placeholder="Escribe tu correo...">
+                </div>
+                <div class="form-group">
+                    <label for="tel">Número de teléfono:</label>
+                    <input type="tel" name="tel" id="tel" placeholder="Introduce tu teléfono...">
+                </div>
+                <div class="form-group">
+                    <label for="nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" name="nacimiento" id="nacimiento" >
+                </div>
+                <div class="form-group">
+                    <p>Género:</p>
+                    <div class="radio-group">
+                        <input type="radio" name="gender" id="male" value="masculino" checked>
+                        <label for="male">Masculino</label>
+                        <input type="radio" name="gender" id="femenino" value="femenino">
+                        <label for="femenino">Femenino</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country">País:</label>
+                    <select name="country" id="country" >
+                        <option value="">Selecciona tu país</option>
+                        <option value="España">España</option>
+                        <option value="Inglaterra">Inglaterra</option>
+                        <option value="Francia">Francia</option>
+                    </select>
+                </div>
+                <div class="acept-group">
+                    <input type="checkbox" name="acept" id="acept" required >
+                    <label for="acept">Acepto los términos y condiciones</label>
+                </div>
+                <div class="btn-container">
+                    <button type="submit">Enviar</button>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+    <script src="js/form.js"></script>
+</body>
+</html>

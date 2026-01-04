@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding-top: 100px;
+}
+
+fieldset {
+    border-color: blue;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    background-color: white;
+    box-shadow: 0 0 30px 10px lightblue;
+}
+
+legend {
+    font-weight: bold;
+    color: blue;
+    font-size: 26px;
+}
+
+label,
+p {
+    font-size: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label,
+.form-group p {
+    padding: 10px;
+    font-weight: bold;
+    color: blue;
+}
+
+.radio-group label {
+    padding: 0;
+    font-weight: normal;
+    font-size: 16px;
+    color: #333;
+    margin: 0 5px;
+}
+
+.acept-group {
+    padding: 20px;
+}
+
+.acept-group label {
+    font-size: 16px;
+}
+
+.btn-container {
+    width: fit-content;
+    margin: 10px auto;
+}
+
+button {
+    color: blue;
+    padding: 8px;
+    font-size: inherit;
+    font-weight: bold;
+    border: 1px solid blue;
+    background-color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: blue;
+    color: white;
+}
+
+input,
+select {
+    padding: 10px 5px;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 5px;
+    border: 1px solid blue;
+    background-color: white;
+}
+
+.fail-style {
+    border: 1px solid red;
+}
+
+.pass-style {
+    border: 1px solid green;
+}
+
+fieldset input:focus {
+    box-shadow: 0 0 30px 2px lightblue;
+}
