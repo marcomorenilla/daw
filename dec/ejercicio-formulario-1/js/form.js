@@ -1,17 +1,8 @@
-/**
- * 
-    Nombre completo (obligatorio).
-    Correo electrónico (obligatorio, con validación de formato de correo).
-    Número de teléfono (opcional, con validación para que solo acepte números).
-    Fecha de nacimiento (obligatorio).
-    Selección de género (radio buttons).
-    Selección de país (desplegable con al menos 3 opciones).
-    Checkbox de aceptación de términos y condiciones (obligatorio).
-
- */
 //Función para validar formulario
 function checkForm(e) {
     e.preventDefault()
+
+    //Obtengo elementos
     const nombre = document.getElementById('nombre')
     const email = document.getElementById('correo')
     const tel = document.getElementById('tel')
@@ -19,19 +10,63 @@ function checkForm(e) {
     const country = document.getElementById('country')
     const acept = document.getElementById('acept')
 
-    const inputs = [nombre, email, tel, birthDate, country,acept]
-
-
+    //Defino regex
     const telRegex = /^\d+$/
     const emptyRegex = /.+/
 
+    //Creo variable para estado global del formulario
+    let isFormValid = true;
 
-    inputs.forEach(i => {
-        let emptyCheck = emptyRegex.test(i.value)
-        
-        emptyCheck? i.classList.remove('fail-style') : i.classList.add('failStyle')
+    //Compruebo campos con las regex
+    if (emptyRegex.test(nombre.value)) {
+        nombre.classList.remove('fail-style')
+    } else {
+        nombre.classList.add('fail-style')
+        isFormValid = false
+    }
 
-    })
+    if (emptyRegex.test(email.value)) {
+        email.classList.remove('fail-style')
+    } else {
+        email.classList.add('fail-style')
+        isFormValid = false
+    }
+
+    if (emptyRegex.test(tel.value) && telRegex.test(tel.value)) {
+        tel.classList.remove('fail-style')
+    } else {
+        tel.classList.add('fail-style')
+        isFormValid = false
+    }
+
+    if (emptyRegex.test(birthDate.value)) {
+        birthDate.classList.remove('fail-style')
+    } else {
+        birthDate.classList.add('fail-style')
+        isFormValid = false
+    }
+
+    if(emptyRegex.test(country.value)){
+        country.classList.remove('fail-style')
+    }else{
+        country.classList.add('fail-style')
+        isFormValid=false
+    }
+
+    if(!acept.checked){
+        acept.classList.add('acept-fail')
+        isFormValid=false
+    }else{
+        acept.classList.remove('acept-fail')
+    }
+
+    //Si tras comprobaciones no se ha cambiado el estado de isFormValid, se envía y resetea
+    if(isFormValid){
+        alert('Formulario enviado correctamente')
+        this.reset()
+    }
+
+
 
 }
 document.addEventListener('DOMContentLoaded', () => {
