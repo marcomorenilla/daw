@@ -1,5 +1,5 @@
 //Función para validar formulario
-function formHandler(e){
+function formHandler(e) {
     e.preventDefault()
 
     const emptyRegex = /.+/
@@ -8,42 +8,51 @@ function formHandler(e){
     const isValidName = nameHandler(emptyRegex)
     const isValidMail = mailHandler()
     const isValidPhone = phoneHandler()
+    const isValidDate = dateHandler(emptyRegex)
+    const isValidCountry = countryHandler(emptyRegex)
+    const isAcepted = isChecked()
+
+    if (isValidMail && isValidName && isValidPhone && isValidDate && isValidCountry && isAcepted) {
+        alert('Formulario enviado correctamente!')
+        const form = document.getElementById('contact-form')
+        form.reset()
+    } else {
+        alert('Se produjo un error de validación, por favor comprueba los campos y vuelve a intentarlo')
+    }
 }
 
 //Función para comprobar el nombre
-function nameHandler(emptyRegex){
-    const nombre=document.getElementById('nombre')
+function nameHandler(emptyRegex) {
+    const nombre = document.getElementById('nombre')
     const nameError = document.getElementById('name-error')
 
     let isValid = emptyRegex.test(nombre.value);
 
-    if(!isValid){
-       nameError.innerHTML = '* Debes rellenar el campo antes de mandar el formulario'
-       nombre.classList.add('validation-error') 
-    } else{
+    if (!isValid) {
+        nameError.innerHTML = '* Debes rellenar el nombre antes de mandar el formulario'
+        nombre.classList.add('validation-error')
+    } else {
         nombre.classList.remove('validation-error')
         nameError.innerHTML = ''
     }
 
-    return isValid 
+    return isValid
 }
 
 //Función para validar el mail
-function mailHandler(){
+function mailHandler() {
     const mailRegex = /^[A-Za-z0-9-_]+@[a-z]+\.[a-z]+$/
 
     const mail = document.getElementById('correo')
     const mailError = document.getElementById('mail-error')
 
-    console.log(`validación correo ${mailRegex.test(mail.value)}`)
-
     let isValid = mailRegex.test(mail.value);
 
-    if(isValid){
-        mailError.innerHTML=''
+    if (isValid) {
+        mailError.innerHTML = ''
         mail.classList.remove('validation-error')
-    }else{
-        mailError.innerHTML=`* Para que el correo sea válido y poder enviar el formulario:
+    } else {
+        mailError.innerHTML = `* Para que el correo sea válido y poder enviar el formulario:
         <ul>
         <li> No puede estar vacío
         <li> La primera parte acepta letras mayúsculas o minúsculas, números o carácteres especiales (- y _)
@@ -58,19 +67,19 @@ function mailHandler(){
 }
 
 //Función para validar el teléfono
-function phoneHandler(){
-    const phoneRegex = /^\+?[0-9-]{3,4}[0-9]{3,4}[0-9]{3}$/
+function phoneHandler() {
+    const phoneRegex = /^\+?[0-9-]{3,6}[0-9-]{3,4}[0-9-]{3,4}$/
 
-    const phone=document.getElementById('tel')
+    const phone = document.getElementById('tel')
     const phoneError = document.getElementById('tel-error')
 
     let isValid = phoneRegex.test(phone.value)
 
-    if(isValid){
+    if (isValid) {
         phoneError.innerHTML = ''
         phone.classList.remove('validation-error')
-    }else{
-        phoneError.innerHTML=`
+    } else {
+        phoneError.innerHTML = `
             * Para que el teléfono sea válido y poder enviar el formulario
             <ul>
             <li> No puede estar vacío
@@ -78,6 +87,59 @@ function phoneHandler(){
             <li> Por ejemplo +34-666-555-444, 666555444 o +34666555444 son teléfonos válidos
             </ul>`
         phone.classList.add('validation-error')
+    }
+    return isValid
+}
+
+//Función para validar el país
+function countryHandler(emptyRegex) {
+    const country = document.getElementById('country')
+    const countryError = document.getElementById('country-error')
+
+    let isValid = emptyRegex.test(country.value)
+
+    if (isValid) {
+        country.classList.remove('validation-error')
+        countryError.innerHTML = ''
+    } else {
+        country.classList.add('validation-error')
+        countryError.innerHTML = '* Debes seleccionar un país antes de mandar el formulario'
+    }
+
+    return isValid
+}
+
+//Función para validar los términos y condiciones
+function isChecked() {
+    const acept = document.getElementById('acept')
+    const aceptError = document.getElementById('acept-error')
+
+    let isValid = acept.checked
+
+    if (isValid) {
+        acept.classList.remove('validation-error')
+        aceptError.innerHTML = ''
+    } else {
+        acept.classList.add('validation-error')
+        aceptError.innerHTML = '* Debes aceptar los términos y condiciones para poder continuar'
+    }
+
+    return isValid
+}
+
+//Función para validar la fecha de nacimiento
+function dateHandler(emptyRegex) {
+    const birthDate = document.getElementById('nacimiento')
+    const birthError = document.getElementById('birth-error')
+
+    let isValid = emptyRegex.test(birthDate.value)
+
+    if (isValid) {
+        birthError.innerHTML = ''
+        birthDate.classList.remove('validation-error')
+    } else {
+        birthDate.classList.add('validation-error')
+        birthError.innerHTML = '* Debes seleccionar una fecha antes de mandar el formulario'
     }
     return isValid
 }
