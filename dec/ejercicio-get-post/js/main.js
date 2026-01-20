@@ -21,7 +21,7 @@ async function getTasks() {
 
 // Hago solicitud para obtener las tareas y obtengo el resultado con await
 // Método diferente para resolver promesas al .then() .catch()
-const tasks = await getTasks()
+let tasks = await getTasks()
 
 //Obtengo el contenedor que va a mostrar las tareas
 const taskList = document.getElementById('task-list');
@@ -56,9 +56,8 @@ async function sendTask(task) {
 
         if(request.ok){
             console.log(`post: ${request.status}`)
-            let newTasks = [task,...tasks]
-            console.log(newTasks)
-            renderTasks(newTasks)
+            tasks = [task,...tasks]
+            renderTasks(tasks)
         }else{
             throw new Error('Algo falló en el post')
         }
@@ -77,7 +76,7 @@ const form = document.getElementById('task-form')
 //pongo listener al formulario
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
-
+    const warn = document.getElementById("warn")
     //Declaro regex para formulario vacío
     const emptyFormReg = /^\S.{3,}$/
 
@@ -90,13 +89,10 @@ form.addEventListener('submit', (e)=>{
         sendTask({title: formTask.value, completed: false})
         console.log(tasks[0])
         form.reset()
+        warn.style="visibility: hidden"
 
     }else{
-        alert('el form no puede estar vacío')
+        warn.style="visibility: visible"
     }
-
-
-
-
 })
 

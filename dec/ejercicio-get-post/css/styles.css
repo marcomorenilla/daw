@@ -1,5 +1,5 @@
 body {
-    background-color: #fbffe4;
+    background-image: radial-gradient(circle,#faff65 10%, #fcfdf3);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -19,7 +19,7 @@ ul {
     margin: 30px auto;
     font-size: 20px;
     background-color: #fcfdf3;
-    border: 5px solid yellow;
+    border: 5px solid skyblue;
     border-radius: 10px;
     padding: 10px;
 }
@@ -36,15 +36,22 @@ form div {
     position: relative;
 }
 
+form p{
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    visibility: hidden;
+}
 
 label {
     position: absolute;
     left: 5%;
-    bottom: 50%;
+    bottom: 75%;
     font-size: 20px;
     background-color: white;
     margin: 0 auto;
     color: blue;
+    pointer-events: none;
     transition: bottom 0.3s ease;
 }
 
@@ -58,8 +65,9 @@ label {
     width: 100%;
 }
 
-input:focus~label {
-    bottom: 80%;
+input:focus~label,
+input:not(:placeholder-shown) ~ label{
+    bottom: 90%;
     color: blue;
     font-weight: normal;
     z-index: 1;
